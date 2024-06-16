@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function Weather(props)
 {
@@ -11,6 +12,15 @@ export default function Weather(props)
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
         axios.get(apiUrl).then(showTemp);
     return (
-        <h2>Hello from Weather</h2>
-    )
+      <MagnifyingGlass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="magnifying-glass-loading"
+        wrapperStyle={{}}
+        wrapperClass="magnifying-glass-wrapper"
+        glassColor="#c0efff"
+        color="#BA81F1"
+      />
+    );
 }
