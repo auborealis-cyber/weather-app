@@ -1,26 +1,78 @@
-import React from "react";
+import React, {useState, useEffect, useCallback} from "react";
 import axios from "axios";
-import { MagnifyingGlass } from "react-loader-spinner";
+import Forecast from "./Forecast";
 
-export default function Weather(props)
-{
-    function showTemp(response) {
-        alert(`The temperature in ${response.data.name} is ${response.data.main.temp}`)
+
+export default function Weather(props) {
+    const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState(props.defaultCity);
+
+    let handleResponse = useCallback((response) => {
+        setWeatherData({
+            ready: true,
+            temp: response.data.main.temp,
+            coordinates: response.data.coord,
+            windSpeed: response.data.wind.speed,
+            city: response.data.name,
+            description: response.data.weather[0].description,
+            humidity: response.data.main.humidity,
+            date: new Date(response.data.dt * 1000),
+            icon: response.data.weather[0].icon,
+        });
+    }, []);
+    useEffect(() => {
+        let search = () => {
+            let apiKey = "de2c40e370d58e257faf07ba4ea95840";
+            let units = "metric";
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
+            axios.get(apiUrl).then(handleResponse);
+        };
+
+    search();
+    }, [city, handleResponse]);
+    function handleSubmit(event) {
+        event.preventDefault();
+        setCity(event.target.elements.city.value);
     }
-        let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-        let units = "metric";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
-        axios.get(apiUrl).then(showTemp);
-    return (
-      <MagnifyingGlass
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="magnifying-glass-loading"
-        wrapperStyle={{}}
-        wrapperClass="magnifying-glass-wrapper"
-        glassColor="#c0efff"
-        color="#BA81F1"
-      />
-    );
+    
+    const getCurrentLocation = () => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                let { latitude, longitude } = position.coords;
+                let apiKey = "de2c40e370d58e257faf07ba4ea95840";
+                let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+                axios.get(apiUrl).then(handleResponse)
+            }
+        );
+    }
+
+    if (weatherData.ready) {
+        return (
+            <div className="Weather">
+                <div className="Form-2">
+                    <form onSubmit={handleSubmit}>
+                        <div className="row">
+                            <div className="col-3">
+                                <button type="submit"
+                                    className="rounded btn"
+                                onClick={getCurrentLocation}>
+                                    Your location
+                                </button>
+                            </div>
+                            <div className="col-6">
+                                <p>Enter Location</p>
+                                <input type="search" placeholder="i.e. New York" className="form-control" autoFocus name="city"/>
+                            </div>
+                            <div className="col-3">
+                                <button type="submit" className="rounded btn">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <Forecast coordinates={weatherData.coordinates} unit={props.unit} changeUnit={props.changeUnit} />
+            </div>
+        );
+    }
 }
