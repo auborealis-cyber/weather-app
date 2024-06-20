@@ -24,12 +24,13 @@ export default function Weather(props) {
         let search = () => {
             let apiKey = "de2c40e370d58e257faf07ba4ea95840";
             let units = "metric";
-            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
             axios.get(apiUrl).then(handleResponse);
         };
 
     search();
     }, [city, handleResponse]);
+    
     function handleSubmit(event) {
         event.preventDefault();
         setCity(event.target.elements.city.value);
@@ -41,10 +42,11 @@ export default function Weather(props) {
                 let { latitude, longitude } = position.coords;
                 let apiKey = "de2c40e370d58e257faf07ba4ea95840";
                 let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-                axios.get(apiUrl).then(handleResponse)
-            }
+                axios.get(apiUrl).then(handleResponse).catch((error) => { console.error("error obtaining weather data:", error); });
+            },
+            (error) => { console.error("Error acquiring geolocation", error); }
         );
-    }
+    };
 
     if (weatherData.ready) {
         return (
