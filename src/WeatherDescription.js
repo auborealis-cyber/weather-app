@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function WeatherDescription(props) {
   return (
     <div className="WeatherDescription">
@@ -15,7 +14,7 @@ export default function WeatherDescription(props) {
         <div className="col p-0">
           <div>
             <div className="card-body">
-              <p className="temp-forecast">Humidity: {props.humidity}%</p>
+             <p className="temp-forecast">Humidity: {props.humidity}%</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Forecast.css"
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import { MagnifyingGlass } from "react-loader-spinner";
