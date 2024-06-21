@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useCallback} from "react";
 import axios from "axios";
 import Forecast from "./Forecast";
-
+import WeatherDescription from "./WeatherDescription";
+import WeatherInformation from "./WeatherInformation";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -21,11 +22,16 @@ export default function Weather(props) {
         });
     }, []);
     useEffect(() => {
-        let search = () => {
-            let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-            let units = "metric";
-            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-            axios.get(apiUrl).then(handleResponse);
+        const search = async () => {
+          let apiKey = "de2c40e370d58e257faf07ba4ea95840";
+          let units = "metric";
+          let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+          try {
+            const response = await axios.get(apiUrl);
+            handleResponse(response.data);
+          } catch (error) {
+            console.log(error);
+          }
         };
 
     search();
@@ -49,32 +55,61 @@ export default function Weather(props) {
     };
 
     if (weatherData.ready) {
+        <WeatherInformation
+          data={weatherData}
+          unit={props.unit}
+          changeUnit={props.changeUnit}
+        />;
         return (
-            <div className="Weather">
-                <div className="Form-2">
-                    <form onSubmit={handleSubmit}>
-                        <div className="row">
-                            <div className="col-3">
-                                <button type="submit"
-                                    className="rounded btn"
-                                onClick={getCurrentLocation}>
-                                    Your location
-                                </button>
-                            </div>
-                            <div className="col-6">
-                                <p>Enter Location</p>
-                                <input type="search" placeholder="i.e. New York" className="form-control" autoFocus name="city"/>
-                            </div>
-                            <div className="col-3">
-                                <button type="submit" className="rounded btn">
-                                    Search
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+          <div className="Weather">
+            <div className="Form-2">
+              <form onSubmit={handleSubmit}>
+                <div className="row">
+                  <div className="col-3">
+                    <button
+                      type="submit"
+                      className="rounded btn"
+                      onClick={getCurrentLocation}
+                    >
+                      Your location
+                    </button>
+                  </div>
+                  <div className="col-6">
+                    <p>Enter Location</p>
+                    <input
+                      type="search"
+                      placeholder="i.e. New York"
+                      className="form-control"
+                      autoFocus
+                      name="city"
+                    />
+                  </div>
+                  <div className="col-3">
+                    <button
+                      type="submit"
+                      className="w-100 rounded btn main-buttons"
+                    >
+                      Search
+                    </button>
+                  </div>
                 </div>
-                <Forecast coordinates={weatherData.coordinates} unit={props.unit} changeUnit={props.changeUnit} />
+              </form>
             </div>
+            <WeatherDescription
+              windSpeed={weatherData.windSpeed}
+              humidity={weatherData.humidity}
+              precipitation={weatherData.precipitation}
+              unit={props.unit}
+            />
+            <Forecast
+              coordinates={weatherData.coordinates}
+              unit={props.unit}
+              changeUnit={props.changeUnit}
+            />
+          </div>
         );
+    } else {
+        return null; 
+        
     }
 }

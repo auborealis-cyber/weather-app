@@ -13,7 +13,7 @@ let Forecast = ({ coordinates, unit }) => {
     "#F10C15",
     "#0254E6",
     "#FFF579",
-    "#9675B4",
+    "#E96F14",
     "#00AF4D",
     "#F57D20",
     "#CCE197",
