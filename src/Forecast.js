@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Forecast.css"
+import "./css/Forecast.css"
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import { MagnifyingGlass } from "react-loader-spinner";
@@ -109,7 +109,7 @@ let Forecast = ({ coordinates, unit }) => {
             >
               <div className="card-body">
                 <WeatherIcon
-                  code={hourData.weather[0].icon}
+                  code={hour.weather[0].icon}
                   animate={true}
                   size={75}
                 />
@@ -117,7 +117,7 @@ let Forecast = ({ coordinates, unit }) => {
                   <span className="weekday">
                     {new Date(hour.dt * 1000).getHours()}:00
                   </span>
-                  <span className="temp"> {Math.round(hour.temp)}</span>
+                  <span className="temp"> {Math.round(hour.temp)}°</span>
                 </div>
               </div>
             </div>

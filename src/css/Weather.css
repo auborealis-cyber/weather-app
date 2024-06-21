@@ -1,0 +1,118 @@
+.CityOverview h1{
+    color: #fefaff;
+    font-size: 42px;
+    font-weight: 800;
+   
+}
+
+.CityOverview h2{
+    color: #fefaff;;
+    
+}
+
+
+.CityOverview ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Today {
+    background-color: rgba(251, 250, 231, 0.7);
+    backdrop-filter: blur(7px);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+
+.weather-icon {
+    width: 100px;
+    
+}
+
+.temperature{
+    color: #fefaff;;
+    
+}
+
+
+
+.glass-container {
+    padding: 0.3rem;
+    padding-bottom: 25px;
+    margin: 5rem 1.5rem 8rem;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(9px);
+    border-radius: 8px;
+    border: 1px solid #0fc695;
+}
+
+.Form{
+    margin: 0.6rem;
+    margin-top: -50px;
+    margin-bottom: 0;
+
+}
+
+.Form p{
+    color: #dbdada;
+    text-align: left;
+    background-color: rgba(103, 211, 241, 0.4);
+    backdrop-filter: blur(7px);
+    padding: 0.2rem;
+    width: 75%;
+    border-radius: 8px 8px 0 0px;
+    font-size: 12px;
+    
+    
+}
+
+.form-control{
+    display: block;
+    width: 100%; 
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #0fc695;   
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    background-color: rgb(255, 255, 255, 0.7);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+}
+
+.buttons{
+   
+    line-height: 1.8;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
+    background-color: #B8d8E3;
+    text-align: center;
+    font-size: 12px;
+    
+}
+
+.main-buttons{
+
+    margin-bottom: 10px;
+    
+}  
+
+.main-buttons:last-of-type{
+    margin-left: -20px;
+}
+
+.main-buttons img{
+    width: 72px;
+    height: 72px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-buttons:last-of-type{
+        margin-left: -55px;
+    }
+
+    .glass-container {
+        padding: 0.3rem;
+        margin: 2rem 1.5rem 4.5rem;
+    }
+  }
+

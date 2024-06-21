@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Weather from "./Weather";
@@ -20,9 +19,9 @@ export default function App() {
       <Forecast unit={unit} changeUnit={changeUnit} />
       <footer>
         This project was coded by 
-        <a href="www.linkedin.com/in/aurora--thomas"> Aurora Thomas</a>,
+        <a href="www.linkedin.com/in/aurora--thomas" target="_blank"> Aurora Thomas</a>,
         open-sourced on 
-        <a href="https://github.com/auborealis-cyber/weather-app"> GitHub</a>
+        <a href="https://github.com/auborealis-cyber/weather-app" target="_blank"> GitHub</a>
       </footer>
     </div>
   );

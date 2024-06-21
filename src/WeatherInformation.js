@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Weather.css"
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 import DateFormat from "./DateFormat";

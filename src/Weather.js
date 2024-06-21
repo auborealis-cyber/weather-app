@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useCallback} from "react";
+import "./css/Weather.css"
 import axios from "axios";
 import Forecast from "./Forecast";
 import WeatherDescription from "./WeatherDescription";
