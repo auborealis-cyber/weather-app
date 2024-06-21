@@ -12,17 +12,17 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        Insert Date
       </header>
       <div>
         <Weather defaultCity="San Diego" unit={unit} changeUnit={changeUnit} />
       </div>
       <Forecast unit={unit} changeUnit={changeUnit} />
       <footer>
-        This project was coded by
-        <a href="www.linkedin.com/in/aurora--thomas">Aurora Thomas</a>,
-        open-sourced on
-        <a href="https://github.com/auborealis-cyber/weather-app">GitHub</a>
+        This project was coded by 
+        <a href="www.linkedin.com/in/aurora--thomas"> Aurora Thomas</a>,
+        open-sourced on 
+        <a href="https://github.com/auborealis-cyber/weather-app"> GitHub</a>
       </footer>
     </div>
   );
