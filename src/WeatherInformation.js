@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/Weather.css"
 import "./img/pngtree-colorful-tetris-lego-blocks-background-image_584426.jpg"
+import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
@@ -8,13 +9,16 @@ export default function WeatherInformation(props) {
   return (
     <div className="WeatherInformation">
       <div className="CityOverview">
+        <div className="currentDate">
+          <DateFormat date={props.data.date} />
+        </div>
         <div className="row">
           <div className="col"></div>
           <div className="col">
             <div className="glass-container">
               <WeatherIcon
                 code={props.data.icon}
-                size={70}
+                size={80}
                 className="weather-icon img-fluid"
               />
               <h1 className="">{props.data.city}</h1>
@@ -31,11 +35,11 @@ export default function WeatherInformation(props) {
               </div>
               <p className="temperature mb-0">
                 <i>
-                  It Feels Like:{" "}
+                  Feels Like:{" "}
                   {Math.round(
                     props.unit === "celsius"
-                      ? props.data.temperature
-                      : props.data.temperature * (9 / 5) + 32
+                      ? props.data.feelsLike
+                      : props.data.feelsLike * (9 / 5) + 32
                   )}
                   °{props.unit === "celsius" ? "C" : "F"}
                 </i>
