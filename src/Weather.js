@@ -18,7 +18,8 @@ export default function Weather(props) {
             windSpeed: response.data.wind.speed,
             city: response.data.name,
             description: response.data.weather[0].description,
-            humidity: response.data.humidity,
+          humidity: response.data.humidity,
+            precipitation:response.data.precipitation,
             date: new Date(response.data.dt * 1000),
             icon: response.data.weather[0].icon,
         });
@@ -98,7 +99,6 @@ export default function Weather(props) {
                 unit={props.unit}
                 changeUnit={props.changeUnit}
               />
-              ;
             </div>
             <WeatherDescription
               windSpeed={weatherData.windSpeed}

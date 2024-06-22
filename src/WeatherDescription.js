@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/WeatherDescription.css"
+import "./css/WeatherDescription.css";
 
 export default function WeatherDescription(props) {
   return (
@@ -8,7 +8,7 @@ export default function WeatherDescription(props) {
         <div className="col p-0">
           <div className="">
             <div className="card-body">
-              <p className="temp-forecast">Wind: {props.windSpeed} km/h</p>
+              <p className="temp-forecast"> Wind: {props.windSpeed} km/h</p>
             </div>
           </div>
         </div>
