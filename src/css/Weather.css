@@ -17,13 +17,21 @@
 }
 
 .Today {
-    background-color: rgba(251, 250, 231, 0.7);
+    background-color: rgba(255, 31, 31, 0.978);
+    color:aliceblue;
     backdrop-filter: blur(7px);
     border-radius: 8px;
-    margin: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    display: flex;
+    float: left;
+    padding: 10px;
 }
 
-
+.WeatherInformation{
+    display: flex;
+    background-image: "./img/pngtree-colorful-tetris-lego-blocks-background-image_584426.jpg";
+}
 .weather-icon {
     width: 100px;
     

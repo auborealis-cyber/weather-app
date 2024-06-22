@@ -1,16 +1,13 @@
 import React from "react";
 import "./css/Weather.css"
+import "./img/pngtree-colorful-tetris-lego-blocks-background-image_584426.jpg"
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
-import DateFormat from "./DateFormat";
 
 export default function WeatherInformation(props) {
   return (
     <div className="WeatherInformation">
       <div className="CityOverview">
-        <div className="Today">
-          <DateFormat date={props.data.date} />
-        </div>
         <div className="row">
           <div className="col"></div>
           <div className="col">
@@ -37,8 +34,8 @@ export default function WeatherInformation(props) {
                   It Feels Like:{" "}
                   {Math.round(
                     props.unit === "celsius"
-                      ? props.data.feelsLike
-                      : props.data.feelsLike * (9 / 5) + 32
+                      ? props.data.temperature
+                      : props.data.temperature * (9 / 5) + 32
                   )}
                   °{props.unit === "celsius" ? "C" : "F"}
                 </i>

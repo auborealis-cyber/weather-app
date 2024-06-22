@@ -1,0 +1,46 @@
+.WeatherDescription{
+    background-color: #9dcbce;
+    border-radius: 18px;
+    margin: -15px 30px 55px;
+    
+    
+}
+
+
+
+.WeatherDescription h5{
+    font-size: 14px;
+}
+
+.temp-forecast{
+    font-size: 12px;
+    padding: 0;
+}
+
+
+.detail-card{
+    border-left: 2px solid #5c6f8c;
+    border-right: 2px solid #5c6f8c;
+}
+
+
+.card-img {
+    height: 65px;
+    width: 65px;
+}
+
+@media screen and (max-width: 768px) {
+    .WeatherDescription{
+        margin-left: -45px;
+        margin: -15px 15px 55px;
+        padding: 0px;
+    }
+
+    .card-img {
+        height: auto;
+        width: 60px;
+    }
+    
+
+    
+  }

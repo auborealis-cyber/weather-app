@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Insert Date
+        Welcome to my Weather app!
       </header>
       <div>
         <Weather defaultCity="San Diego" unit={unit} changeUnit={changeUnit} />

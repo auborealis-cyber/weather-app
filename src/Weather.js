@@ -4,6 +4,7 @@ import axios from "axios";
 import Forecast from "./Forecast";
 import WeatherDescription from "./WeatherDescription";
 import WeatherInformation from "./WeatherInformation";
+import DateFormat from "./DateFormat";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -55,13 +56,11 @@ export default function Weather(props) {
     };
 
     if (weatherData.ready) {
-        <WeatherInformation
-          data={weatherData}
-          unit={props.unit}
-          changeUnit={props.changeUnit}
-        />;
         return (
           <div className="Weather">
+            <div className="Today">
+              <DateFormat date={weatherData.date} />
+            </div>
             <div className="Form-2">
               <form onSubmit={handleSubmit}>
                 <div className="row">
@@ -94,6 +93,12 @@ export default function Weather(props) {
                   </div>
                 </div>
               </form>
+              <WeatherInformation
+                data={weatherData}
+                unit={props.unit}
+                changeUnit={props.changeUnit}
+              />
+              ;
             </div>
             <WeatherDescription
               windSpeed={weatherData.windSpeed}

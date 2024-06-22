@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/WeatherDescription.css"
 
 export default function WeatherDescription(props) {
   return (
