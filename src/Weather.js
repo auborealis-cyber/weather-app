@@ -18,7 +18,7 @@ export default function Weather(props) {
           windSpeed: response.data.wind.speed,
           city: response.data.name,
           description: response.data.weather[0].description,
-          humidity: response.data.humidity,
+          humidity: response.data.main.humidity,
           precipitation: response.data.precipitation,
           date: new Date(response.data.dt * 1000),
           icon: response.data.weather[0].icon,
@@ -30,7 +30,7 @@ export default function Weather(props) {
           let units = "metric";
           let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
           try {
-            const response = await axios.get(apiUrl).then(handleResponse)
+            await axios.get(apiUrl).then(handleResponse)
           } catch (error) {
             console.log(error);
           }

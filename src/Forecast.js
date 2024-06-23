@@ -12,7 +12,7 @@ let Forecast = ({ coordinates, unit }) => {
 
   let colors = [
     "#F10C15",
-    "#0254E6",
+    "#00A3DA",
     "#FFF579",
     "#E96F14",
     "#00AF4D",

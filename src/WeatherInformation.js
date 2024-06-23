@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/Weather.css"
 import "./img/pngtree-colorful-tetris-lego-blocks-background-image_584426.jpg"
-import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
@@ -9,11 +8,9 @@ export default function WeatherInformation(props) {
   return (
     <div className="WeatherInformation">
       <div className="CityOverview">
-        
         <div className="row">
-          <div className="col"></div>
           <div className="col">
-            <div className="glass-container">
+            <div className="glass-container text-center">
               <WeatherIcon
                 code={props.data.icon}
                 size={80}
@@ -44,6 +41,7 @@ export default function WeatherInformation(props) {
               </p>
             </div>
           </div>
+          <div className="col-5"></div>
         </div>
       </div>
     </div>
