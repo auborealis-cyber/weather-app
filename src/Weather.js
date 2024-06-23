@@ -59,10 +59,12 @@ export default function Weather(props) {
     if (weatherData.ready) {
         return (
           <div className="Weather">
-            <div className="Today">
-              <DateFormat date={weatherData.date} />
+            <div className="row">
+              <div className="Today">
+                <DateFormat date={weatherData.date} />
+              </div>
             </div>
-            <div className="Form-2">
+            <div className="Form-2 text-center">
               <form onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-3">

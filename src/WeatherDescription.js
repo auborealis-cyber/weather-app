@@ -13,9 +13,19 @@ export default function WeatherDescription(props) {
           </div>
         </div>
         <div className="col p-0">
+          <div className="detail-card">
+            <div className="card-body">
+              <p className="temp-forecast">
+                {" "}
+                Precipitation: {props.precipitation}%
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col p-0">
           <div>
             <div className="card-body">
-             <p className="temp-forecast">Humidity: {props.humidity}%</p>
+              <p className="temp-forecast">Humidity: {props.humidity}%</p>
             </div>
           </div>
         </div>

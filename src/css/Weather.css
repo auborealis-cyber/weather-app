@@ -21,7 +21,7 @@
 }
 
 .Today {
-    background-color: rgba(255, 31, 31, 0.978);
+    background-color: rgba(168, 49, 218, 0.978);
     color:aliceblue;
     backdrop-filter: blur(7px);
     border-radius: 8px;
@@ -30,6 +30,7 @@
     display: flex;
     float: left;
     padding: 10px;
+    justify-content: center;
 }
 
 .WeatherInformation{
@@ -56,31 +57,11 @@
     margin: 5rem 1.5rem 8rem;
     background: blur(10px);
     border-radius: 8px;
-    border: 1px solid #0fc695;
+    border: 1px solid #65e7c4;
 }
 
 .temperature-container{
     backdrop-filter:blur(5px)
-}
-
-.Form{
-    margin: 0.6rem;
-    margin-top: -50px;
-    margin-bottom: 0;
-
-}
-
-.Form p{
-    color: #dbdada;
-    text-align: left;
-    background-color: rgba(103, 211, 241, 0.4);
-    backdrop-filter: blur(7px);
-    padding: 0.2rem;
-    width: 75%;
-    border-radius: 8px 8px 0 0px;
-    font-size: 12px;
-    
-    
 }
 
 .form-control{
@@ -89,10 +70,10 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #0fc695;   
+    color: #f61919;   
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    background-color: rgb(255, 255, 255, 0.7);
+    background-color: rgba(242, 235, 235, 0.7);
     backdrop-filter: blur(1px);
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
 }
@@ -120,6 +101,12 @@
 .main-buttons img{
     width: 72px;
     height: 72px;
+}
+
+.unit-switch{
+    color: #c645e6;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
