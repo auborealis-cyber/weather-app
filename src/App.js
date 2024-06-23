@@ -10,18 +10,27 @@ export default function App() {
   };
   return (
     <div className="App">
-      <header className="App-header">
-        Welcome to my Weather app!
-      </header>
+      <header className="App-header">Welcome to my Weather app!</header>
       <div>
         <Weather defaultCity="San Diego" unit={unit} changeUnit={changeUnit} />
       </div>
       <Forecast unit={unit} changeUnit={changeUnit} />
       <footer>
-        This project was coded by 
-        <a href="www.linkedin.com/in/aurora--thomas" target="_blank"> Aurora Thomas</a>,
-        open-sourced on 
-        <a href="https://github.com/auborealis-cyber/weather-app" target="_blank"> GitHub</a>
+        This project was coded by
+        <a href="www.linkedin.com/in/aurora--thomas" target="_blank">
+          {" "}
+          Aurora Thomas
+        </a>
+        , open-sourced on
+        <a
+          href="https://github.com/auborealis-cyber/weather-app"
+          target="_blank"
+        >
+          {" "}
+          GitHub
+        </a>
+        and hosted by{" "}
+        <a href="https://aurorareactweatherapp.netlify.app/" target="blank">Netlify</a>
       </footer>
     </div>
   );

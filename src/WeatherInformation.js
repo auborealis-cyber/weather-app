@@ -9,9 +9,7 @@ export default function WeatherInformation(props) {
   return (
     <div className="WeatherInformation">
       <div className="CityOverview">
-        <div className="currentDate">
-          <DateFormat date={props.data.date} />
-        </div>
+        
         <div className="row">
           <div className="col"></div>
           <div className="col">
