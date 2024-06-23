@@ -66,7 +66,7 @@
 
 .form-control{
     display: block;
-    width: 100%; 
+    width: 90%; 
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
@@ -80,22 +80,23 @@
 
 .buttons{
    
-    line-height: 1.8;
+    line-height: 1.5;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
-    background-color: #B8d8E3;
+    background-color: #d6b8e3;
     text-align: center;
     font-size: 12px;
-    
+    margin-right:20px;
 }
 
 .main-buttons{
-
+background-color: #d6b8e3;
+color: rgb(255, 255, 255);
     margin-bottom: 10px;
     
 }  
 
 .main-buttons:last-of-type{
-    margin-left: -20px;
+    margin-left: -50px;
 }
 
 .main-buttons img{

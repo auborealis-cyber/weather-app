@@ -70,14 +70,13 @@ export default function Weather(props) {
                   <div className="col-3">
                     <button
                       type="submit"
-                      className="rounded btn"
+                      className="w-95 rounded btn main-buttons"
                       onClick={getCurrentLocation}
                     >
                       Your location
                     </button>
                   </div>
                   <div className="col-6">
-                    <p>Enter Location</p>
                     <input
                       type="search"
                       placeholder="i.e. New York"
