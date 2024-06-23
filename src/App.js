@@ -25,12 +25,15 @@ export default function App() {
         <a
           href="https://github.com/auborealis-cyber/weather-app"
           target="_blank"
+          rel="noreferrer"
         >
           {" "}
           GitHub
         </a>
         and hosted by{" "}
-        <a href="https://aurorareactweatherapp.netlify.app/" target="blank">Netlify</a>
+        <a href="https://aurorareactweatherapp.netlify.app/" target="blank">
+          Netlify
+        </a>
       </footer>
     </div>
   );
