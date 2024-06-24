@@ -1,6 +1,5 @@
 import React from "react";
 import "./css/Weather.css"
-import "./img/pngtree-colorful-tetris-lego-blocks-background-image_584426.jpg"
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
@@ -19,9 +18,10 @@ export default function WeatherInformation(props) {
               <h1 className="">{props.data.city}</h1>
               <h2 className="capitalize">{props.data.description}</h2>
               <div className="temperature-container">
-                <WeatherTemp celsius={props.data.temp} unit={props.unit} />|
+                <WeatherTemp celsius={props.data.temp} unit={props.unit} />
                 <span className="unit-switch" onClick={props.changeUnit}>
-                  {props.unit === "celsius" ? "°F" : "°C"}
+                  {" "}
+                  °{props.unit === "celsius" ? "F" : "C"}
                 </span>
               </div>
               <p className="temperature mb-0">
