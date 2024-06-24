@@ -11,13 +11,13 @@ let Forecast = ({ coordinates, unit }) => {
   let [loading, setLoading] = useState(true);
 
   let colors = [
-    "#F10C15",
-    "#00A3DA",
-    "#FFF579",
-    "#E96F14",
-    "#00AF4D",
-    "#F57D20",
-    "#CCE197",
+    "#c7f5fe",
+    "#c8f0f0",
+    "#aee8e6",
+    "#a8d7f7",
+    "#8dc6ff",
+    "#79c2d0",
+    "#86d8dc",
   ];
 
   useEffect(() => {

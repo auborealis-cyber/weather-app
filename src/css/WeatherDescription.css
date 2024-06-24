@@ -1,5 +1,5 @@
 .WeatherDescription{
-    background-color: #f3a736da;
+    background-color: #78e8f0;
     border-radius: 18px;
     margin: 20px 30px 55px;
     
@@ -19,8 +19,8 @@
 
 
 .detail-card{
-    border-left: 2px solid #ee6666;
-    border-right: 2px solid #ff2997;
+    border-left: 2px solid #2962ff;
+    border-right: 2px solid #2962ff;
 }
 
 
@@ -40,7 +40,5 @@
         height: auto;
         width: 60px;
     }
-    
-
-    
+     
   }

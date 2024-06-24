@@ -1,5 +1,5 @@
 .Forecast {
-  background-color: #FFCF00;
+  background-color: rgb(123, 209, 244);
   font-size: 12px;
   white-space: nowrap;
   display: flex;
@@ -32,8 +32,8 @@
 }
 
 .tab.active {
-  color: #c10d0d;
-  background-color: #FFCF00;
+  color: #0f0f0f;
+  background-color: rgb(123, 209, 244);
 }
 
 .tab:active {
@@ -43,7 +43,7 @@
 }
 
 .tab:hover{
-    background-color: #fc9d0f;
+    background-color: #b76be7;
     color: aliceblue;
 }
 
@@ -57,9 +57,9 @@
 .card {
   transition: all 0.3s ease-in-out;
   padding: 10px;
-  margin: 8px;
+  margin: 10px;
   flex: 0 0 auto;
-  width: 133px;
+  width: 150px;
   border: 5px solid #fff235;
   border-radius: 10px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -76,19 +76,19 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 8px;
+  padding: 10px;
   
 }
 
 .card .card-img {
-  width: 50px;
+  width: 150px;
   height: auto;
 }
 
 .card .temp-forecast {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: 9DB0CE;
+  color: #010711;
 }
 
 .card .temp-forecast .weekday {
@@ -96,22 +96,17 @@
   font-weight: bold;
 }
 
-.card .temp-forecast .temperature {
+.card .temp-forecast .temp {
   display: block;
-  margin-top: 4px;
+  margin: 2px;
 }
-
-.Loading {
-  color: #9DB0CE;
-}
-
-
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 122px;
+    width: 125px;
     margin: 5px;
-    
-    
+  }
+  .card .temp-forecast .temp{
+    padding-right:10px;
   }
 }

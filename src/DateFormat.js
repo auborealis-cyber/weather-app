@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TypeIt from "typeit-react";
 
+
 const DateFormat = ({ date }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -25,11 +26,15 @@ const DateFormat = ({ date }) => {
   });
 
   return (
-    <div>
-      <TypeIt>
-        Local Time: {timeFormat} <br />
-        {dayFormat}, {formatDate}.
-      </TypeIt>
+    <div className="dateFormat">
+      <h3>
+        <strong>
+          <TypeIt>
+            Local Time: {timeFormat} <br />
+            {dayFormat}, {formatDate}
+          </TypeIt>
+        </strong>
+      </h3>
     </div>
   );
 };

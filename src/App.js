@@ -33,7 +33,7 @@ export default function App() {
         and hosted by{" "}
         <a href="https://aurorareactweatherapp.netlify.app/" target="blank">
           Netlify
-        </a>
+        </a>.  Images from rawpixel.com and photo of puffins brought by the WWF
       </footer>
     </div>
   );
