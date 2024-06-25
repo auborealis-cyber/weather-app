@@ -5,18 +5,18 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 25px;
-    background-color: #5E8CB3;
+    background-color: #c1f1fa;
 }
 
 .CityOverview h1{
-    color: #8bf7ff;
+    color: rgb(255, 246, 66);
     text-decoration: underline;
     font-size: 42px;
     font-weight: 800;
 }
 
 .CityOverview h2{
-    color: #f8dddd;
+    color:  rgb(254, 251, 150);
     
 }
 
@@ -142,7 +142,11 @@ color: rgb(255, 255, 255);
        background-repeat: no-repeat;
        background-image:fluid;
     }
+
     .glass-container{
-        max-width: 700px;
+        max-width: 625px;
+        margin-left: 225px;
+        margin-right: 55px;
+        
     }
 }

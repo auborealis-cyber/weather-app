@@ -44,18 +44,25 @@ export default function Weather(props) {
         setCity(event.target.elements.city.value);
     }
     
-    const getCurrentLocation = () => {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                let { latitude, longitude } = position.coords;
-                let apiKey = "de2c40e370d58e257faf07ba4ea95840";
-                let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-                axios.get(apiUrl).then(handleResponse).catch((error) => { console.error("error obtaining weather data:", error); });
-            },
-            (error) => { console.error("Error acquiring geolocation", error); }
-        );
-    };
-
+  const getCurrentLocation = (event) => {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        let { latitude, longitude } = position.coords;
+        let apiKey = "de2c40e370d58e257faf07ba4ea95840";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+        axios
+          .get(apiUrl)
+          .then(handleResponse)
+          .catch((error) => {
+            console.error("error obtaining weather data:", error);
+          });
+      },
+      (error) => {
+        console.error("Error acquiring geolocation", error);
+      }
+    );
+  };
     if (weatherData.ready) {
         return (
           <div className="Weather">
@@ -69,7 +76,7 @@ export default function Weather(props) {
                 <div className="row">
                   <div className="col-3">
                     <button
-                      type="submit"
+                      type="button"
                       className="w-95 rounded btn main-buttons"
                       onClick={getCurrentLocation}
                     >
