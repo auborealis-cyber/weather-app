@@ -83,7 +83,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #f61919;   
+    color: #19d9f6;   
     background-clip: padding-box;
     border: 1px solid #ced4da;
     background-color: rgba(242, 235, 235, 0.7);
@@ -134,6 +134,7 @@ color: rgb(255, 255, 255);
         padding: 0.3rem;
         margin: 2rem 1.5rem 4.5rem;
         border:#c1f1fa;
+        max-width:fit-content;
     }
   }
 @media (min-width:800px){
