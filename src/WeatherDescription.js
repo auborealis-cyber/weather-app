@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/WeatherDescription.css";
+import logo from "./img/Au-logo.png";
 
 export default function WeatherDescription(props) {
   return (
@@ -15,10 +16,11 @@ export default function WeatherDescription(props) {
         <div className="col p-0">
           <div className="detail-card">
             <div className="card-body">
-              <p className="temp-forecast">
-                {" "}
-                Precipitation: {props.precipitation}%
-              </p>
+              <div className="temp-forecast img-fluid text-center">
+                <a href="https://aurorathomas-portfolio.netlify.app/" target="_blank" rel="noreferrer" alt="portfolio-website">
+                  <img src={logo} alt="aurora-thomas-logo" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
